@@ -1,17 +1,17 @@
 import React from 'react'
-import Home from '../screens/Home'
+import Favorite from '../screens/Favorite'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import MovieDetail from '../screens/MovieDetail'
 
 const Stack = createNativeStackNavigator()
 
-const HomeStackNavigation = () => {
+const FavoriteStackNavigation = () => {
     return (
-        <Stack.Navigator initialRouteName="HomeScreen">
-          <Stack.Screen name="HomeScreen" component={Home} options={{ title: 'Home', headerShown: false }}/>
+        <Stack.Navigator initialRouteName="FavoriteScreen">
+          <Stack.Screen name="FavoriteScreen" component={Favorite} options={{ title: 'Favorite', headerShown: false }}/>
           <Stack.Screen name="MovieDetail" component={MovieDetail} />
         </Stack.Navigator>
     )
 }
 
-export default HomeStackNavigation
+export default FavoriteStackNavigation
