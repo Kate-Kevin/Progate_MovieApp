@@ -28,6 +28,7 @@ export default function Favorite(): JSX.Element {
 
   return (
     <FlatList
+    style={styles.container}
       data={movie}
       renderItem={({ item }) => (
         <View style={styles.itemContainer}>
@@ -42,7 +43,7 @@ export default function Favorite(): JSX.Element {
         </View>
       )}
       keyExtractor={item => item.id.toString()}
-      numColumns={4} // Mengatur jumlah kolom
+      numColumns={3} 
     />
   )
 }
@@ -52,8 +53,11 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   itemContainer: {
-    flex: 1,
-    margin: 4, // Margin antara item
+    margin: 4,
+  },
+  movieList: {
+    paddingLeft: 4,
+    marginTop: 8,
   },
   emptyText: {
     textAlign: 'center',
