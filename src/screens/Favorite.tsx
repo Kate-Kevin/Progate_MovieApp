@@ -27,33 +27,43 @@ export default function Favorite(): JSX.Element {
   }
 
   return (
-    <FlatList
-      data={movie}
-      renderItem={({ item }) => (
-        <View style={styles.itemContainer}>
-          <MovieItem
-            movie={item}
-            coverType={'poster'}
-            size={{
-              width: 100,
-              height: 160,
-            }}
-          />
-        </View>
-      )}
-      keyExtractor={item => item.id.toString()}
-      numColumns={4} // Mengatur jumlah kolom
-    />
+    <View style={styles.center}>
+      <FlatList
+        style={styles.container}
+        data={movie}
+        renderItem={({ item }) => (
+          <View style={styles.itemContainer}>
+            <MovieItem
+              movie={item}
+              coverType={'poster'}
+              size={{
+                width: 100,
+                height: 160,
+              }}
+            />
+          </View>
+        )}
+        keyExtractor={item => item.id.toString()}
+        numColumns={3}
+      />
+    </View>
   )
 }
 const styles = StyleSheet.create({
+  center:{
+    height: '100%',
+    alignItems: 'center'
+  },
   container: {
     flex: 1,
     padding: 16,
   },
   itemContainer: {
-    flex: 1,
-    margin: 4, // Margin antara item
+    margin: 4,
+  },
+  movieList: {
+    paddingLeft: 4,
+    marginTop: 8,
   },
   emptyText: {
     textAlign: 'center',
