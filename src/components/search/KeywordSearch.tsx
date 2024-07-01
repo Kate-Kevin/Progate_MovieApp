@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, TextInput, FlatList, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, TextInput, FlatList, } from 'react-native'
 import { API_Key } from '../../shares/constant'
 import MovieItem from '../movies/MovieItem'
 import { Movie } from '../../types/app'

@@ -27,27 +27,33 @@ export default function Favorite(): JSX.Element {
   }
 
   return (
-    <FlatList
-    style={styles.container}
-      data={movie}
-      renderItem={({ item }) => (
-        <View style={styles.itemContainer}>
-          <MovieItem
-            movie={item}
-            coverType={'poster'}
-            size={{
-              width: 100,
-              height: 160,
-            }}
-          />
-        </View>
-      )}
-      keyExtractor={item => item.id.toString()}
-      numColumns={3} 
-    />
+    <View style={styles.center}>
+      <FlatList
+        style={styles.container}
+        data={movie}
+        renderItem={({ item }) => (
+          <View style={styles.itemContainer}>
+            <MovieItem
+              movie={item}
+              coverType={'poster'}
+              size={{
+                width: 100,
+                height: 160,
+              }}
+            />
+          </View>
+        )}
+        keyExtractor={item => item.id.toString()}
+        numColumns={3}
+      />
+    </View>
   )
 }
 const styles = StyleSheet.create({
+  center:{
+    height: '100%',
+    alignItems: 'center'
+  },
   container: {
     flex: 1,
     padding: 16,
